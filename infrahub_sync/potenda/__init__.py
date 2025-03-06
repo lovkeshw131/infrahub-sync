@@ -39,7 +39,7 @@ class Potenda:
         enable_console_logging(verbosity=1)
         self.flags = (
             DiffSyncFlags.SKIP_UNMATCHED_BOTH
-            if self.config.skip_unmatched_destination
+            if  hasattr(self.config, "skip_unmatched_destination") and self.config.skip_unmatched_destination
             else DiffSyncFlags.SKIP_UNMATCHED_DST
         )
 

@@ -42,7 +42,7 @@ class PeeringmanagerAdapter(DiffSyncMixin, Adapter):
         auth_method = settings.get("auth_method", "token")
         api_token = os.environ.get("PEERING_MANAGER_TOKEN") or settings.get("token")
         timeout = settings.get("timeout", 30)
-        params = setting.get("params", {})
+        params = settings.get("params", {})
 
         if not url:
             msg = "url must be specified!"

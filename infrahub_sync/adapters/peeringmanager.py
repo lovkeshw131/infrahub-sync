@@ -42,7 +42,6 @@ class PeeringmanagerAdapter(DiffSyncMixin, Adapter):
         auth_method = settings.get("auth_method", "token")
         api_token = os.environ.get("PEERING_MANAGER_TOKEN") or settings.get("token")
         timeout = settings.get("timeout", 30)
-        params = settings.get("params", {})
 
         if not url:
             msg = "url must be specified!"
@@ -58,7 +57,6 @@ class PeeringmanagerAdapter(DiffSyncMixin, Adapter):
             auth_method=auth_method,
             api_token=api_token,
             timeout=timeout,
-            params=params
         )
 
     def model_loader(self, model_name: str, model: PeeringmanagerModel) -> None:
